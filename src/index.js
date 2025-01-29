@@ -3,31 +3,28 @@ import ReactDOM from 'react-dom/client';
 
 import './index.css';
 
+const img = './images/Lana_Turner.png';
+const name = 'Lana Turner';
+const age = 'Age: 33';
+const description = 'Detailed description of the individual';
+
 const ProfileCard = () => {
   return (
     <section className="profilelist">
-      <Profile />
-      <Profile />
-      <Profile />
-      <Profile />
+      <Profile img={img} name={name} age={age} description={description} />
+      <Profile img={img} name={name} age={age} description={description} />
     </section>
   );
 };
 
-const age = 'Age: 33';
-
-const Profile = () => {
-  const name = 'Lana Turner';
+const Profile = (props) => {
+  console.log(props);
   return (
     <article className="profile">
-      <img
-        src="./images/Lana_Turner.png"
-        alt="Profile"
-        style={{ width: '300px', height: '300px', borderRadius: '5%' }}
-      />
-      <h2>{name}</h2>
-      <h3>{age}</h3>
-      <h4>Detailed description of the individual</h4>
+      <img src={props.img} alt={props.name} />
+      <h2>{props.name}</h2>
+      <h3>{props.age}</h3>
+      <h4>{props.description}</h4>
     </article>
   );
 };
