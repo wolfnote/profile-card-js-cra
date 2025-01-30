@@ -3,16 +3,35 @@ import ReactDOM from 'react-dom/client';
 
 import './index.css';
 
-const img = './images/Lana_Turner.png';
-const name = 'Lana Turner';
-const age = 'Age: 33';
-const description = 'Detailed description of the individual';
+const firstCard = {
+  img: './images/Lana_Turner.png',
+  fullName: 'Lana Turner',
+  age: 'Age: 33',
+  description: 'Hollywood actress known for her roles in classic films.',
+};
+
+const secondCard = {
+  img: './images/John_White.png',
+  fullName: 'John White',
+  age: 'Age: 68',
+  description: 'Vietnam war veteran who served his country honorably.',
+};
 
 const ProfileCard = () => {
   return (
     <section className="profilelist">
-      <Profile img={img} name={name} age={age} description={description} />
-      <Profile img={img} name={name} age={age} description={description} />
+      <Profile
+        img={firstCard.img}
+        name={firstCard.fullName}
+        age={firstCard.age}
+        description={firstCard.description}
+      />
+      <Profile
+        img={secondCard.img}
+        name={secondCard.fullName}
+        age={secondCard.age}
+        description={secondCard.description}
+      />
     </section>
   );
 };
