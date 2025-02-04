@@ -36,14 +36,13 @@ const ProfileCard = () => {
   );
 };
 
-const Profile = (props) => {
-  console.log(props);
+const Profile = ({ img, name, age, description }) => {
   return (
     <article className="profile">
-      <img src={props.img} alt={props.name} />
-      <h2>{props.name}</h2>
-      <h3>{props.age}</h3>
-      <h4>{props.description}</h4>
+      <img src={img} alt={name} />
+      <h2>{name}</h2>
+      <h3>{age}</h3>
+      <h4>{description}</h4>
     </article>
   );
 };
