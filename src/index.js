@@ -36,10 +36,11 @@ const ProfileCard = () => {
   );
 };
 
-const Profile = ({ img, name, age, description }) => {
+const Profile = ({ img, name, age, description, children }) => {
   return (
     <article className="profile">
       <img src={img} alt={name} />
+
       <h2>{name}</h2>
       <h3>{age}</h3>
       <h4>{description}</h4>
