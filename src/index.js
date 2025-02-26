@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 // 🔹 cards (Array) - Represents data that will be passed as props
-// This array holds a list of profile card objects, each containing an image, full name, age, and description.
+// This array holds a list of profile card objects, each containing an id, image, full name, age, and description.
 // These objects are used as **props** in the Profile component inside ProfileCard.
 const cards = [
   {
@@ -30,8 +30,8 @@ const cards = [
 // This component receives profile details (props) from `ProfileCard` and displays them.
 const Profile = ({ img, name, age, description }) => {
   return (
+    // Wrapper for each individual profile card
     <article className="profile">
-      {/* Wrapper for each profile card */}
       {/* Displays the profile image */}
       <img src={img} alt={name} />
       {/* Displays the person's full name */}
@@ -55,12 +55,12 @@ function ProfileCard() {
         console.log(card); // Logs each card object and its index to the console (for debugging)
 
         // Extracts properties from the card object
-        const { img, fullName, age, description } = card;
+        const { id, img, fullName, age, description } = card;
 
         // Passing profile details (props) to the `Profile` component (child)
         return (
           <Profile
-            key={card.id} // Assigning a unique key for React to track each component
+            key={id} // Assigning a unique key for React to track each component
             img={img}
             name={fullName} // Passing `fullName` as `name` prop to match Profile component
             age={age}
